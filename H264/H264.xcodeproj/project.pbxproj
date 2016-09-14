@@ -13,6 +13,9 @@
 		B97F7E071D89BB5A00635AB1 /* tab_find_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97F7E031D89BB5A00635AB1 /* tab_find_press@2x.png */; };
 		B97F7E081D89BB5A00635AB1 /* tab_homepage_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97F7E041D89BB5A00635AB1 /* tab_homepage_nor@2x.png */; };
 		B97F7E091D89BB5A00635AB1 /* tab_homepage_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97F7E051D89BB5A00635AB1 /* tab_homepage_press@2x.png */; };
+		B97F7E121D89C73700635AB1 /* JWOpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = B97F7E0F1D89C73700635AB1 /* JWOpenGLView.m */; };
+		B97F7E131D89C73700635AB1 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B97F7E101D89C73700635AB1 /* Shader.fsh */; };
+		B97F7E141D89C73700635AB1 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = B97F7E111D89C73700635AB1 /* Shader.vsh */; };
 		B99F88B11D89664500669017 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B99F88B01D89664500669017 /* main.m */; };
 		B99F88B41D89664500669017 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B99F88B31D89664500669017 /* AppDelegate.m */; };
 		B99F88BC1D89664500669017 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B99F88BB1D89664500669017 /* Assets.xcassets */; };
@@ -53,6 +56,10 @@
 		B97F7E031D89BB5A00635AB1 /* tab_find_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_find_press@2x.png"; sourceTree = "<group>"; };
 		B97F7E041D89BB5A00635AB1 /* tab_homepage_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_homepage_nor@2x.png"; sourceTree = "<group>"; };
 		B97F7E051D89BB5A00635AB1 /* tab_homepage_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_homepage_press@2x.png"; sourceTree = "<group>"; };
+		B97F7E0E1D89C73700635AB1 /* JWOpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWOpenGLView.h; sourceTree = "<group>"; };
+		B97F7E0F1D89C73700635AB1 /* JWOpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWOpenGLView.m; sourceTree = "<group>"; };
+		B97F7E101D89C73700635AB1 /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.fsh; sourceTree = "<group>"; };
+		B97F7E111D89C73700635AB1 /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
 		B99F88AC1D89664500669017 /* H264.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = H264.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B99F88B01D89664500669017 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B99F88B21D89664500669017 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -112,6 +119,13 @@
 			name = Other;
 			sourceTree = "<group>";
 		};
+		B97F7E151D89D2F600635AB1 /* AAC硬编码 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "AAC硬编码";
+			sourceTree = "<group>";
+		};
 		B99F88A31D89664500669017 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +149,7 @@
 		B99F88AE1D89664500669017 /* H264 */ = {
 			isa = PBXGroup;
 			children = (
+				B97F7E151D89D2F600635AB1 /* AAC硬编码 */,
 				B97F7E0A1D89C06400635AB1 /* Other */,
 				B99F88EE1D89790600669017 /* Image */,
 				B99F88E91D8966C400669017 /* H264硬解码 */,
@@ -187,6 +202,10 @@
 		B99F88E91D8966C400669017 /* H264硬解码 */ = {
 			isa = PBXGroup;
 			children = (
+				B97F7E101D89C73700635AB1 /* Shader.fsh */,
+				B97F7E111D89C73700635AB1 /* Shader.vsh */,
+				B97F7E0E1D89C73700635AB1 /* JWOpenGLView.h */,
+				B97F7E0F1D89C73700635AB1 /* JWOpenGLView.m */,
 				B97F7DFF1D89BA5400635AB1 /* JWDecodeViewController.h */,
 				B97F7E001D89BA5400635AB1 /* JWDecodeViewController.m */,
 			);
@@ -312,12 +331,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B97F7E081D89BB5A00635AB1 /* tab_homepage_nor@2x.png in Resources */,
+				B97F7E131D89C73700635AB1 /* Shader.fsh in Resources */,
 				B97F7E091D89BB5A00635AB1 /* tab_homepage_press@2x.png in Resources */,
 				B97F7E071D89BB5A00635AB1 /* tab_find_press@2x.png in Resources */,
 				B99F88F61D89793C00669017 /* close_preview@3x.png in Resources */,
 				B99F88F51D89793C00669017 /* close_preview@2x.png in Resources */,
 				B99F88F21D89792D00669017 /* close@3x.png in Resources */,
 				B99F88BF1D89664500669017 /* LaunchScreen.storyboard in Resources */,
+				B97F7E141D89C73700635AB1 /* Shader.vsh in Resources */,
 				B99F88BC1D89664500669017 /* Assets.xcassets in Resources */,
 				B97F7E061D89BB5A00635AB1 /* tab_find_nor@2x.png in Resources */,
 				B99F88F01D89792200669017 /* logo_3745aaf.png in Resources */,
@@ -346,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B99F88B41D89664500669017 /* AppDelegate.m in Sources */,
+				B97F7E121D89C73700635AB1 /* JWOpenGLView.m in Sources */,
 				B97F7E011D89BA5400635AB1 /* JWDecodeViewController.m in Sources */,
 				B99F88E71D8966A200669017 /* JWEncodeViewController.m in Sources */,
 				B97F7DFE1D89B98E00635AB1 /* JWTabBarController.m in Sources */,

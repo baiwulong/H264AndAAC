@@ -132,6 +132,11 @@
     self.centerButton.layer.masksToBounds = YES;
     [self.centerButton setImage:[UIImage imageNamed:@"logo_3745aaf"] forState:UIControlStateNormal];
     [self.centerButton addTarget:self action:@selector(centerBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    // 加阴影
+    self.centerButton.layer.shadowColor = [UIColor blackColor].CGColor; // shadowColor阴影颜色
+    self.centerButton.layer.shadowOffset = CGSizeMake(0, 0); // shadowOffset阴影偏移, 这个跟shadowRadius配合使用
+    self.centerButton.layer.shadowOpacity = 0.5; // //阴影透明度，默认0
+    self.centerButton.layer.shadowRadius = 1; // //阴影半径，默认3
     [self addSubview:self.centerButton];
 }
 

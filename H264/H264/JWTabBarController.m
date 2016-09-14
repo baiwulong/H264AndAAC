@@ -46,7 +46,7 @@
     vc.tabBarItem.title = title;
     vc.tabBarItem.image = image;
     vc.tabBarItem.selectedImage = selectImage;
-    vc.view.backgroundColor = [UIColor whiteColor];
+    vc.view.backgroundColor = [UIColor grayColor];
 }
 
 #pragma mark - 全局设置tabBarItem的属性
