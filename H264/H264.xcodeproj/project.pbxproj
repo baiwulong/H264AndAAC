@@ -1,0 +1,592 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B97F7DFE1D89B98E00635AB1 /* JWTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B97F7DFD1D89B98E00635AB1 /* JWTabBarController.m */; };
+		B97F7E011D89BA5400635AB1 /* JWDecodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B97F7E001D89BA5400635AB1 /* JWDecodeViewController.m */; };
+		B97F7E061D89BB5A00635AB1 /* tab_find_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97F7E021D89BB5A00635AB1 /* tab_find_nor@2x.png */; };
+		B97F7E071D89BB5A00635AB1 /* tab_find_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97F7E031D89BB5A00635AB1 /* tab_find_press@2x.png */; };
+		B97F7E081D89BB5A00635AB1 /* tab_homepage_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97F7E041D89BB5A00635AB1 /* tab_homepage_nor@2x.png */; };
+		B97F7E091D89BB5A00635AB1 /* tab_homepage_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97F7E051D89BB5A00635AB1 /* tab_homepage_press@2x.png */; };
+		B99F88B11D89664500669017 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B99F88B01D89664500669017 /* main.m */; };
+		B99F88B41D89664500669017 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B99F88B31D89664500669017 /* AppDelegate.m */; };
+		B99F88BC1D89664500669017 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B99F88BB1D89664500669017 /* Assets.xcassets */; };
+		B99F88BF1D89664500669017 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B99F88BD1D89664500669017 /* LaunchScreen.storyboard */; };
+		B99F88CA1D89664600669017 /* H264Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B99F88C91D89664600669017 /* H264Tests.m */; };
+		B99F88D51D89664600669017 /* H264UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B99F88D41D89664600669017 /* H264UITests.m */; };
+		B99F88E71D8966A200669017 /* JWEncodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B99F88E61D8966A200669017 /* JWEncodeViewController.m */; };
+		B99F88ED1D8968AD00669017 /* JWCaptureView.m in Sources */ = {isa = PBXBuildFile; fileRef = B99F88EC1D8968AD00669017 /* JWCaptureView.m */; };
+		B99F88F01D89792200669017 /* logo_3745aaf.png in Resources */ = {isa = PBXBuildFile; fileRef = B99F88EF1D89792200669017 /* logo_3745aaf.png */; };
+		B99F88F21D89792D00669017 /* close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B99F88F11D89792D00669017 /* close@3x.png */; };
+		B99F88F51D89793C00669017 /* close_preview@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B99F88F31D89793C00669017 /* close_preview@2x.png */; };
+		B99F88F61D89793C00669017 /* close_preview@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B99F88F41D89793C00669017 /* close_preview@3x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B99F88C61D89664600669017 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B99F88A41D89664500669017 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B99F88AB1D89664500669017;
+			remoteInfo = H264;
+		};
+		B99F88D11D89664600669017 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B99F88A41D89664500669017 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B99F88AB1D89664500669017;
+			remoteInfo = H264;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B97F7DFC1D89B98E00635AB1 /* JWTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWTabBarController.h; sourceTree = "<group>"; };
+		B97F7DFD1D89B98E00635AB1 /* JWTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWTabBarController.m; sourceTree = "<group>"; };
+		B97F7DFF1D89BA5400635AB1 /* JWDecodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWDecodeViewController.h; sourceTree = "<group>"; };
+		B97F7E001D89BA5400635AB1 /* JWDecodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWDecodeViewController.m; sourceTree = "<group>"; };
+		B97F7E021D89BB5A00635AB1 /* tab_find_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_find_nor@2x.png"; sourceTree = "<group>"; };
+		B97F7E031D89BB5A00635AB1 /* tab_find_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_find_press@2x.png"; sourceTree = "<group>"; };
+		B97F7E041D89BB5A00635AB1 /* tab_homepage_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_homepage_nor@2x.png"; sourceTree = "<group>"; };
+		B97F7E051D89BB5A00635AB1 /* tab_homepage_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_homepage_press@2x.png"; sourceTree = "<group>"; };
+		B99F88AC1D89664500669017 /* H264.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = H264.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B99F88B01D89664500669017 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B99F88B21D89664500669017 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B99F88B31D89664500669017 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B99F88BB1D89664500669017 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B99F88BE1D89664500669017 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B99F88C01D89664500669017 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B99F88C51D89664600669017 /* H264Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = H264Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B99F88C91D89664600669017 /* H264Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = H264Tests.m; sourceTree = "<group>"; };
+		B99F88CB1D89664600669017 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B99F88D01D89664600669017 /* H264UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = H264UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B99F88D41D89664600669017 /* H264UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = H264UITests.m; sourceTree = "<group>"; };
+		B99F88D61D89664600669017 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B99F88E51D8966A200669017 /* JWEncodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWEncodeViewController.h; sourceTree = "<group>"; };
+		B99F88E61D8966A200669017 /* JWEncodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWEncodeViewController.m; sourceTree = "<group>"; };
+		B99F88EB1D8968AD00669017 /* JWCaptureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWCaptureView.h; sourceTree = "<group>"; };
+		B99F88EC1D8968AD00669017 /* JWCaptureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWCaptureView.m; sourceTree = "<group>"; };
+		B99F88EF1D89792200669017 /* logo_3745aaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_3745aaf.png; sourceTree = "<group>"; };
+		B99F88F11D89792D00669017 /* close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@3x.png"; sourceTree = "<group>"; };
+		B99F88F31D89793C00669017 /* close_preview@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_preview@2x.png"; sourceTree = "<group>"; };
+		B99F88F41D89793C00669017 /* close_preview@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_preview@3x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B99F88A91D89664500669017 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B99F88C21D89664600669017 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B99F88CD1D89664600669017 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B97F7E0A1D89C06400635AB1 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				B99F88B21D89664500669017 /* AppDelegate.h */,
+				B99F88B31D89664500669017 /* AppDelegate.m */,
+				B97F7DFC1D89B98E00635AB1 /* JWTabBarController.h */,
+				B97F7DFD1D89B98E00635AB1 /* JWTabBarController.m */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		B99F88A31D89664500669017 = {
+			isa = PBXGroup;
+			children = (
+				B99F88AE1D89664500669017 /* H264 */,
+				B99F88C81D89664600669017 /* H264Tests */,
+				B99F88D31D89664600669017 /* H264UITests */,
+				B99F88AD1D89664500669017 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B99F88AD1D89664500669017 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B99F88AC1D89664500669017 /* H264.app */,
+				B99F88C51D89664600669017 /* H264Tests.xctest */,
+				B99F88D01D89664600669017 /* H264UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B99F88AE1D89664500669017 /* H264 */ = {
+			isa = PBXGroup;
+			children = (
+				B97F7E0A1D89C06400635AB1 /* Other */,
+				B99F88EE1D89790600669017 /* Image */,
+				B99F88E91D8966C400669017 /* H264硬解码 */,
+				B99F88E81D8966B800669017 /* H264硬编码 */,
+				B99F88BB1D89664500669017 /* Assets.xcassets */,
+				B99F88BD1D89664500669017 /* LaunchScreen.storyboard */,
+				B99F88C01D89664500669017 /* Info.plist */,
+				B99F88AF1D89664500669017 /* Supporting Files */,
+			);
+			path = H264;
+			sourceTree = "<group>";
+		};
+		B99F88AF1D89664500669017 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B99F88B01D89664500669017 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B99F88C81D89664600669017 /* H264Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B99F88C91D89664600669017 /* H264Tests.m */,
+				B99F88CB1D89664600669017 /* Info.plist */,
+			);
+			path = H264Tests;
+			sourceTree = "<group>";
+		};
+		B99F88D31D89664600669017 /* H264UITests */ = {
+			isa = PBXGroup;
+			children = (
+				B99F88D41D89664600669017 /* H264UITests.m */,
+				B99F88D61D89664600669017 /* Info.plist */,
+			);
+			path = H264UITests;
+			sourceTree = "<group>";
+		};
+		B99F88E81D8966B800669017 /* H264硬编码 */ = {
+			isa = PBXGroup;
+			children = (
+				B99F88EB1D8968AD00669017 /* JWCaptureView.h */,
+				B99F88EC1D8968AD00669017 /* JWCaptureView.m */,
+				B99F88E51D8966A200669017 /* JWEncodeViewController.h */,
+				B99F88E61D8966A200669017 /* JWEncodeViewController.m */,
+			);
+			name = "H264硬编码";
+			sourceTree = "<group>";
+		};
+		B99F88E91D8966C400669017 /* H264硬解码 */ = {
+			isa = PBXGroup;
+			children = (
+				B97F7DFF1D89BA5400635AB1 /* JWDecodeViewController.h */,
+				B97F7E001D89BA5400635AB1 /* JWDecodeViewController.m */,
+			);
+			name = "H264硬解码";
+			sourceTree = "<group>";
+		};
+		B99F88EE1D89790600669017 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				B97F7E021D89BB5A00635AB1 /* tab_find_nor@2x.png */,
+				B97F7E031D89BB5A00635AB1 /* tab_find_press@2x.png */,
+				B97F7E041D89BB5A00635AB1 /* tab_homepage_nor@2x.png */,
+				B97F7E051D89BB5A00635AB1 /* tab_homepage_press@2x.png */,
+				B99F88F31D89793C00669017 /* close_preview@2x.png */,
+				B99F88F41D89793C00669017 /* close_preview@3x.png */,
+				B99F88F11D89792D00669017 /* close@3x.png */,
+				B99F88EF1D89792200669017 /* logo_3745aaf.png */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B99F88AB1D89664500669017 /* H264 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B99F88D91D89664600669017 /* Build configuration list for PBXNativeTarget "H264" */;
+			buildPhases = (
+				B99F88A81D89664500669017 /* Sources */,
+				B99F88A91D89664500669017 /* Frameworks */,
+				B99F88AA1D89664500669017 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = H264;
+			productName = H264;
+			productReference = B99F88AC1D89664500669017 /* H264.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B99F88C41D89664600669017 /* H264Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B99F88DC1D89664600669017 /* Build configuration list for PBXNativeTarget "H264Tests" */;
+			buildPhases = (
+				B99F88C11D89664600669017 /* Sources */,
+				B99F88C21D89664600669017 /* Frameworks */,
+				B99F88C31D89664600669017 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B99F88C71D89664600669017 /* PBXTargetDependency */,
+			);
+			name = H264Tests;
+			productName = H264Tests;
+			productReference = B99F88C51D89664600669017 /* H264Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B99F88CF1D89664600669017 /* H264UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B99F88DF1D89664600669017 /* Build configuration list for PBXNativeTarget "H264UITests" */;
+			buildPhases = (
+				B99F88CC1D89664600669017 /* Sources */,
+				B99F88CD1D89664600669017 /* Frameworks */,
+				B99F88CE1D89664600669017 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B99F88D21D89664600669017 /* PBXTargetDependency */,
+			);
+			name = H264UITests;
+			productName = H264UITests;
+			productReference = B99F88D01D89664600669017 /* H264UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B99F88A41D89664500669017 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = evenCoder;
+				TargetAttributes = {
+					B99F88AB1D89664500669017 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					B99F88C41D89664600669017 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = B99F88AB1D89664500669017;
+					};
+					B99F88CF1D89664600669017 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = B99F88AB1D89664500669017;
+					};
+				};
+			};
+			buildConfigurationList = B99F88A71D89664500669017 /* Build configuration list for PBXProject "H264" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B99F88A31D89664500669017;
+			productRefGroup = B99F88AD1D89664500669017 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B99F88AB1D89664500669017 /* H264 */,
+				B99F88C41D89664600669017 /* H264Tests */,
+				B99F88CF1D89664600669017 /* H264UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B99F88AA1D89664500669017 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B97F7E081D89BB5A00635AB1 /* tab_homepage_nor@2x.png in Resources */,
+				B97F7E091D89BB5A00635AB1 /* tab_homepage_press@2x.png in Resources */,
+				B97F7E071D89BB5A00635AB1 /* tab_find_press@2x.png in Resources */,
+				B99F88F61D89793C00669017 /* close_preview@3x.png in Resources */,
+				B99F88F51D89793C00669017 /* close_preview@2x.png in Resources */,
+				B99F88F21D89792D00669017 /* close@3x.png in Resources */,
+				B99F88BF1D89664500669017 /* LaunchScreen.storyboard in Resources */,
+				B99F88BC1D89664500669017 /* Assets.xcassets in Resources */,
+				B97F7E061D89BB5A00635AB1 /* tab_find_nor@2x.png in Resources */,
+				B99F88F01D89792200669017 /* logo_3745aaf.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B99F88C31D89664600669017 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B99F88CE1D89664600669017 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B99F88A81D89664500669017 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B99F88B41D89664500669017 /* AppDelegate.m in Sources */,
+				B97F7E011D89BA5400635AB1 /* JWDecodeViewController.m in Sources */,
+				B99F88E71D8966A200669017 /* JWEncodeViewController.m in Sources */,
+				B97F7DFE1D89B98E00635AB1 /* JWTabBarController.m in Sources */,
+				B99F88ED1D8968AD00669017 /* JWCaptureView.m in Sources */,
+				B99F88B11D89664500669017 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B99F88C11D89664600669017 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B99F88CA1D89664600669017 /* H264Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B99F88CC1D89664600669017 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B99F88D51D89664600669017 /* H264UITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B99F88C71D89664600669017 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B99F88AB1D89664500669017 /* H264 */;
+			targetProxy = B99F88C61D89664600669017 /* PBXContainerItemProxy */;
+		};
+		B99F88D21D89664600669017 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B99F88AB1D89664500669017 /* H264 */;
+			targetProxy = B99F88D11D89664600669017 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B99F88BD1D89664500669017 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B99F88BE1D89664500669017 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B99F88D71D89664600669017 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B99F88D81D89664600669017 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B99F88DA1D89664600669017 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = H264/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "https---github.com-evenCoder.H264";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B99F88DB1D89664600669017 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = H264/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "https---github.com-evenCoder.H264";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B99F88DD1D89664600669017 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = H264Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "https---github.com-evenCoder.H264Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/H264.app/H264";
+			};
+			name = Debug;
+		};
+		B99F88DE1D89664600669017 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = H264Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "https---github.com-evenCoder.H264Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/H264.app/H264";
+			};
+			name = Release;
+		};
+		B99F88E01D89664600669017 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = H264UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "https---github.com-evenCoder.H264UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = H264;
+			};
+			name = Debug;
+		};
+		B99F88E11D89664600669017 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = H264UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "https---github.com-evenCoder.H264UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = H264;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B99F88A71D89664500669017 /* Build configuration list for PBXProject "H264" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B99F88D71D89664600669017 /* Debug */,
+				B99F88D81D89664600669017 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B99F88D91D89664600669017 /* Build configuration list for PBXNativeTarget "H264" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B99F88DA1D89664600669017 /* Debug */,
+				B99F88DB1D89664600669017 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B99F88DC1D89664600669017 /* Build configuration list for PBXNativeTarget "H264Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B99F88DD1D89664600669017 /* Debug */,
+				B99F88DE1D89664600669017 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B99F88DF1D89664600669017 /* Build configuration list for PBXNativeTarget "H264UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B99F88E01D89664600669017 /* Debug */,
+				B99F88E11D89664600669017 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B99F88A41D89664500669017 /* Project object */;
+}
