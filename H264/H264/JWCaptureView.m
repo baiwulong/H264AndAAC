@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <VideoToolbox/VideoToolbox.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import "JWAACEncode.h"
 
 #define SCREENWIDTH  [UIScreen mainScreen].bounds.size.width
 #define SCREENHEIGH  [UIScreen mainScreen].bounds.size.height
@@ -85,7 +86,8 @@
  */
 @property (nonatomic, strong) AVCaptureConnection  *jAudioConnection;
 
-// @property (nonatomic, strong) JWAACEncode *jAACEcode;
+
+@property (nonatomic, strong) JWAACEncode *jAACEcode;
 
 
 @end
@@ -145,7 +147,7 @@
     
     if (!self.jCaptureSession || !self.jCaptureSession.running) {
         
-        //[self startAudioCapture];
+        [self startAudioCapture];
         [self startVideoCapture];
     }
     else {
@@ -213,6 +215,40 @@
         }
     }
     return nil;
+}
+
+#pragma mark - 开始音频
+- (void)startAudioCapture {
+    
+    self.jAACEcode = [[JWAACEncode alloc] init]; // 音频编码
+    jAudioQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    // 获取声音设备
+    AVCaptureDevice *audioDevice = [[AVCaptureDevice devicesWithMediaType:AVMediaTypeAudio] lastObject];
+    // 创建对应音频设备输入对象
+    AVCaptureDeviceInput *audioDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:audioDevice error:nil];
+    // 6.添加到会话中
+    // 6.1 添加音频
+    if ([self.jCaptureSession canAddInput:audioDeviceInput]) {
+        
+        [self.jCaptureSession addInput:audioDeviceInput];
+    }
+    
+    // 获取音频数据输出设备
+    AVCaptureAudioDataOutput *audioOutput = [AVCaptureAudioDataOutput new];
+    // 设置代理
+    [audioOutput setSampleBufferDelegate:self queue:jAudioQueue];
+    if ([self.jCaptureSession canAddOutput:audioOutput]) {
+        
+        [self.jCaptureSession addOutput:audioOutput];
+    }
+    // 获取视频输入与输出连接，用于分辨音视频数据
+    self.jAudioConnection = [audioOutput connectionWithMediaType:AVMediaTypeAudio];
+    
+    // 音频保存路径
+    NSString *audioPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"audio.aac"];
+    [[NSFileManager defaultManager] removeItemAtPath:audioPath error:nil]; // 移除旧文件
+    [[NSFileManager defaultManager] createFileAtPath:audioPath contents:nil attributes:nil]; // 创建新文件
+    jAudioHandle = [NSFileHandle fileHandleForWritingAtPath:audioPath];  // 管理写进文件
 }
 
 #pragma mark - 开始视频
@@ -343,15 +379,17 @@
     }
     else if (connection == self.jAudioConnection) {
         
-//        [self.jAACEcode encodeSampleBuffer:sampleBuffer completianBlock:^(NSData *encodedData, NSError *error) {
-//            
-//            if (encodedData) {
-//                NSLog(@"音频");
-//                // NSLog(@"Audio data.length (%lu):%@", (unsigned long)encodedData.length,encodedData.description);
-//                // 将encodedData写入jAudioHandle
-//                [jAudioHandle writeData:encodedData];
-//            }
-//        }];
+        dispatch_sync(jAudioQueue, ^{
+           
+            [self.jAACEcode encodeSampleBuffer:sampleBuffer completianBlock:^(NSData *encodedData, NSError *error) {
+                
+                if (encodedData) {
+                    // 将encodedData写入jAudioHandle
+                    [jAudioHandle writeData:encodedData];
+                    NSLog(@"音频");
+                }
+            }];
+        });
     }
 }
 
@@ -490,6 +528,8 @@ void didCompressH264(void *outputCallbackRefCon, void *sourceFrameRefCon, OSStat
     [self endVideoToolBox];
     [jFileHandle closeFile];
     jFileHandle = NULL;
+    [jAudioHandle closeFile];
+    jAudioHandle = NULL;
 }
 
 #pragma mark - 停止编码

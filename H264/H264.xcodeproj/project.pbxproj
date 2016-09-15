@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9689D8C1D8A4BFA00EEDDF5 /* JWAACEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = B9689D8B1D8A4BFA00EEDDF5 /* JWAACEncode.m */; };
 		B97F7DFE1D89B98E00635AB1 /* JWTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B97F7DFD1D89B98E00635AB1 /* JWTabBarController.m */; };
 		B97F7E011D89BA5400635AB1 /* JWDecodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B97F7E001D89BA5400635AB1 /* JWDecodeViewController.m */; };
 		B97F7E061D89BB5A00635AB1 /* tab_find_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97F7E021D89BB5A00635AB1 /* tab_find_nor@2x.png */; };
@@ -48,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B9689D8A1D8A4BFA00EEDDF5 /* JWAACEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWAACEncode.h; sourceTree = "<group>"; };
+		B9689D8B1D8A4BFA00EEDDF5 /* JWAACEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWAACEncode.m; sourceTree = "<group>"; };
 		B97F7DFC1D89B98E00635AB1 /* JWTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWTabBarController.h; sourceTree = "<group>"; };
 		B97F7DFD1D89B98E00635AB1 /* JWTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWTabBarController.m; sourceTree = "<group>"; };
 		B97F7DFF1D89BA5400635AB1 /* JWDecodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWDecodeViewController.h; sourceTree = "<group>"; };
@@ -122,6 +125,8 @@
 		B97F7E151D89D2F600635AB1 /* AAC硬编码 */ = {
 			isa = PBXGroup;
 			children = (
+				B9689D8A1D8A4BFA00EEDDF5 /* JWAACEncode.h */,
+				B9689D8B1D8A4BFA00EEDDF5 /* JWAACEncode.m */,
 			);
 			name = "AAC硬编码";
 			sourceTree = "<group>";
@@ -370,6 +375,7 @@
 				B97F7E121D89C73700635AB1 /* JWOpenGLView.m in Sources */,
 				B97F7E011D89BA5400635AB1 /* JWDecodeViewController.m in Sources */,
 				B99F88E71D8966A200669017 /* JWEncodeViewController.m in Sources */,
+				B9689D8C1D8A4BFA00EEDDF5 /* JWAACEncode.m in Sources */,
 				B97F7DFE1D89B98E00635AB1 /* JWTabBarController.m in Sources */,
 				B99F88ED1D8968AD00669017 /* JWCaptureView.m in Sources */,
 				B99F88B11D89664500669017 /* main.m in Sources */,
