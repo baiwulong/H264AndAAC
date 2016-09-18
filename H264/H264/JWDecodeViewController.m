@@ -8,7 +8,9 @@
 
 #import "JWDecodeViewController.h"
 #import "JWOpenGLView.h"
+#import "JWAACPlayer.h"
 #import <VideoToolbox/VideoToolbox.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 #define SCREENWIDTH  [UIScreen mainScreen].bounds.size.width
 #define SCREENHEIGH  [UIScreen mainScreen].bounds.size.height
@@ -31,6 +33,8 @@
     uint8_t                   *jInputBuffer;
     long                      jInputSize;
     long                      jInputMaxSize;
+    
+    JWAACPlayer               *player;
 }
 
 @property (nonatomic, strong) JWOpenGLView *jOpenGLView;
@@ -90,17 +94,45 @@ const uint8_t lyStartCode[4] = {0, 0, 0, 1};
 }
 
 /**
- *  开始解码
+ *  开始视频解码
  */
 - (void)startDecode {
     
-    [self onInputStart];
+    [self audioStart];
+    
+    [self videoStart];
     
     [self.jDisplayLink setPaused:NO];
 }
 
+/**
+ *  获取aac音频解码 两种方法
+ */
+- (void)audioStart {
+    
+    NSString *urlString = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"audio.aac"];
+    NSURL *audioUrl = [NSURL URLWithString:urlString];
+    // 第一种:
+    SystemSoundID soundID;
+    // Creates a system sound object.
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)(audioUrl), &soundID);
+    // Registers a callback function that is invoked when a specified system sound finishes playing.
+    AudioServicesAddSystemSoundCompletion(soundID, NULL, NULL, &playCallBack, (__bridge void * _Nullable)(self));
+    // AudioServicesPlayAlertSound(soundID);
+    AudioServicesPlaySystemSound(soundID);
+    // 第二种
+    // player = [[JWAACPlayer alloc] initWithUrl:audioUrl];
+    // [player play];
+}
+
+void playCallBack(SystemSoundID ID, void *clientData) {
+    
+    NSLog(@"callBack");
+}
+
+
 #pragma mark - 获取储存的H.264
-- (void)onInputStart {
+- (void)videoStart {
     
     // H.264储存的路径
     NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"test.h264"];

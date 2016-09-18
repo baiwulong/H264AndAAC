@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B92567B01D8D9D3000398AB4 /* JWAACPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B92567AF1D8D9D3000398AB4 /* JWAACPlayer.m */; };
 		B9689D8C1D8A4BFA00EEDDF5 /* JWAACEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = B9689D8B1D8A4BFA00EEDDF5 /* JWAACEncode.m */; };
 		B97F7DFE1D89B98E00635AB1 /* JWTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B97F7DFD1D89B98E00635AB1 /* JWTabBarController.m */; };
 		B97F7E011D89BA5400635AB1 /* JWDecodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B97F7E001D89BA5400635AB1 /* JWDecodeViewController.m */; };
@@ -49,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B92567AE1D8D9D3000398AB4 /* JWAACPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWAACPlayer.h; sourceTree = "<group>"; };
+		B92567AF1D8D9D3000398AB4 /* JWAACPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWAACPlayer.m; sourceTree = "<group>"; };
 		B9689D8A1D8A4BFA00EEDDF5 /* JWAACEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWAACEncode.h; sourceTree = "<group>"; };
 		B9689D8B1D8A4BFA00EEDDF5 /* JWAACEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWAACEncode.m; sourceTree = "<group>"; };
 		B97F7DFC1D89B98E00635AB1 /* JWTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWTabBarController.h; sourceTree = "<group>"; };
@@ -111,6 +114,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B92567AD1D8D98E600398AB4 /* AAC硬解码 */ = {
+			isa = PBXGroup;
+			children = (
+				B92567AE1D8D9D3000398AB4 /* JWAACPlayer.h */,
+				B92567AF1D8D9D3000398AB4 /* JWAACPlayer.m */,
+			);
+			name = "AAC硬解码";
+			sourceTree = "<group>";
+		};
 		B97F7E0A1D89C06400635AB1 /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +166,7 @@
 		B99F88AE1D89664500669017 /* H264 */ = {
 			isa = PBXGroup;
 			children = (
+				B92567AD1D8D98E600398AB4 /* AAC硬解码 */,
 				B97F7E151D89D2F600635AB1 /* AAC硬编码 */,
 				B97F7E0A1D89C06400635AB1 /* Other */,
 				B99F88EE1D89790600669017 /* Image */,
@@ -294,11 +307,12 @@
 		B99F88A41D89664500669017 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = evenCoder;
 				TargetAttributes = {
 					B99F88AB1D89664500669017 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = Q3UU7GS774;
 					};
 					B99F88C41D89664600669017 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -375,6 +389,7 @@
 				B97F7E121D89C73700635AB1 /* JWOpenGLView.m in Sources */,
 				B97F7E011D89BA5400635AB1 /* JWDecodeViewController.m in Sources */,
 				B99F88E71D8966A200669017 /* JWEncodeViewController.m in Sources */,
+				B92567B01D8D9D3000398AB4 /* JWAACPlayer.m in Sources */,
 				B9689D8C1D8A4BFA00EEDDF5 /* JWAACEncode.m in Sources */,
 				B97F7DFE1D89B98E00635AB1 /* JWTabBarController.m in Sources */,
 				B99F88ED1D8968AD00669017 /* JWCaptureView.m in Sources */,
@@ -439,8 +454,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -462,7 +479,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -483,8 +500,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -500,7 +519,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -511,7 +530,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Q3UU7GS774;
 				INFOPLIST_FILE = H264/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "https---github.com-evenCoder.H264";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -522,7 +543,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Q3UU7GS774;
 				INFOPLIST_FILE = H264/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "https---github.com-evenCoder.H264";
 				PRODUCT_NAME = "$(TARGET_NAME)";
