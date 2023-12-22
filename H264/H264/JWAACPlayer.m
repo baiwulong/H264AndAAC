@@ -36,12 +36,14 @@ const uint32_t CONST_BUFFER_SIZE = 0x10000;
     // 音频数据流格式的描述.Callback Method 回调函数，系统规定好了回调函数的参数，以及调用的地方，你只需要保证参数的格式正确，向函数里添加代码即可，函数的方法名称可以随便写，没有强制的规定。
     AudioStreamBasicDescription audioStreamBaseDescrition;
 
-    AudioStreamPacketDescription *audioStreamPacketDescription;
+    AudioStreamPacketDescription *audioStreamPacketDescription; //数据包的格式不同时会不同
+    
     // 定义的一个不透明的数据类型，专门用来代表一个audio queue
     // 使用一个缓冲队列来存储data，用来播放或录音。播放或录音的时候，数据以流的形式操作，可以边获取数据变播放，或者边录音，边存储。
-    AudioQueueRef audioQueue;
+    AudioQueueRef audioQueue; //音频队列对象指针
+    
     // 是AudioQueueBuffer的别名，表明该参数为一个AudioQueueBuffer对象
-    AudioQueueBufferRef audioQueueBuffers[CONST_BUFFER_COUNT];
+    AudioQueueBufferRef audioQueueBuffers[CONST_BUFFER_COUNT];  //音频流缓冲区对象
     
     SInt64 readedPacket; // 参数类型
     
@@ -53,9 +55,7 @@ const uint32_t CONST_BUFFER_SIZE = 0x10000;
 @implementation JWAACPlayer
 
 - (instancetype)initWithUrl:(NSURL *)url {
-    
     if (self = [super init]) {
-        
         _AACURL = url;
         [self customAudioConfig:_AACURL];
     }
@@ -63,7 +63,6 @@ const uint32_t CONST_BUFFER_SIZE = 0x10000;
 }
 
 - (void)play {
-    
     // Sets a playback audio queue parameter value.
     AudioQueueSetParameter(audioQueue, kAudioQueueParam_Volume, 1.0);
     // Begins playing or recording audio.
@@ -91,39 +90,49 @@ const uint32_t CONST_BUFFER_SIZE = 0x10000;
 }
 
 - (void)customAudioConfig:(NSURL *)url {
-
-    // Open an existing audio file specified by a URL.
+    // 打开音频文件
     OSStatus status = AudioFileOpenURL((__bridge CFURLRef)url, kAudioFileReadPermission, 0, &audioFileID);
     if (status != noErr) {
-        
-        NSLog(@"打开文件失败 %@", url);
         return;
     }
+
+    //从音频文件中读取属性值，获取audio的format(就是录制的时候配置的参数)
     uint32_t size = sizeof(audioStreamBaseDescrition);
-    // Gets the value of an audio file property.
     status = AudioFileGetProperty(audioFileID, kAudioFilePropertyDataFormat, &size, &audioStreamBaseDescrition);
     NSAssert(status == noErr, @"error");
+    
     // Creates a new playback audio queue object.
-    status = AudioQueueNewOutput(&audioStreamBaseDescrition, bufferReady, (__bridge void * _Nullable)(self), NULL, NULL, 0, &audioQueue);
+    status = AudioQueueNewOutput(&audioStreamBaseDescrition,
+                                 bufferReady,
+                                 (__bridge void * _Nullable)(self),
+                                 NULL,
+                                 NULL,
+                                 0,
+                                 &audioQueue);
     NSAssert(status == noErr, @"error");
-    if (audioStreamBaseDescrition.mBytesPerPacket == 0 || audioStreamBaseDescrition.mFramesPerPacket == 0) {
-        
-        uint32_t maxSize;
-        size = sizeof(maxSize);
+    
+    //    在整个Core Audio中可能会用到三种不同的packets：
+    //    CBR (constant bit rate) formats：例如 linear PCM and IMA/ADPCM，所有的packet使用相同的大小。
+    //    VBR (variable bit rate) formats：例如 AAC，Apple Lossless，MP3，所有的packets拥有相同的frames，但是每个sample中的bits数目不同。
+    //    VFR (variable frame rate) formats：packets拥有数目不同的的frames。
+    bool isFormatVBR = (audioStreamBaseDescrition.mBytesPerPacket == 0 || audioStreamBaseDescrition.mFramesPerPacket == 0);
+    if (isFormatVBR) {
+        uint32_t maxPacketSize;
+        size = sizeof(maxPacketSize);
         // The theoretical maximum packet size in the file.
-        AudioFileGetProperty(audioFileID, kAudioFilePropertyPacketSizeUpperBound, &size, &maxSize);
-        if (maxSize > CONST_BUFFER_SIZE) {
-            
-            maxSize = CONST_BUFFER_SIZE;
+        AudioFileGetProperty(audioFileID, kAudioFilePropertyPacketSizeUpperBound, &size, &maxPacketSize);
+        if (maxPacketSize > CONST_BUFFER_SIZE) {
+            maxPacketSize = CONST_BUFFER_SIZE;
         }
-        packetNums = CONST_BUFFER_SIZE / maxSize;
+        packetNums = CONST_BUFFER_SIZE / maxPacketSize;
         audioStreamPacketDescription = malloc(sizeof(AudioStreamPacketDescription) * packetNums);
     }
     else {
-        
+        // linearPCM
         packetNums = CONST_BUFFER_SIZE / audioStreamBaseDescrition.mBytesPerPacket;
         audioStreamPacketDescription = nil;
     }
+    
     char cookies[100];
     memset(cookies, 0, sizeof(cookies));
     // 这里的100 有问题
