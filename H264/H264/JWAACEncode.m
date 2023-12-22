@@ -162,18 +162,26 @@
     }
 }
 
+// 用于描述音频单元或编解码器的类别和子类别
 - (AudioClassDescription *)getAudioClassDescriptionWithType:(UInt32)type withManufacturer:(UInt32)manufacturer {
     static AudioClassDescription desc;
     UInt32 encoderSpecifier = type;
     UInt32 size;
-    OSStatus status = AudioFormatGetPropertyInfo(kAudioFormatProperty_Encoders, sizeof(encoderSpecifier), &encoderSpecifier, &size);
+    OSStatus status = AudioFormatGetPropertyInfo(kAudioFormatProperty_Encoders,
+                                                 sizeof(encoderSpecifier),
+                                                 &encoderSpecifier,
+                                                 &size);
     if (status) {
         NSLog(@"error getting audio format propery info: %d", (int)(status));
         return nil;
     }
     unsigned int count = size / sizeof(AudioClassDescription);
     AudioClassDescription descriptions[count];
-    OSStatus statusDesc = AudioFormatGetProperty(kAudioFormatProperty_Encoders, sizeof(encoderSpecifier), &encoderSpecifier, &size, descriptions);
+    OSStatus statusDesc = AudioFormatGetProperty(kAudioFormatProperty_Encoders,
+                                                 sizeof(encoderSpecifier),
+                                                 &encoderSpecifier,
+                                                 &size,
+                                                 descriptions);
     if (statusDesc) {
         NSLog(@"error getting audio format propery: %d", (int)(statusDesc));
         return nil;
